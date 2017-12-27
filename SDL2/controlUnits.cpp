@@ -26,11 +26,12 @@ void controlUnits::move(char flag){
 
 int controlUnits::KeyEvent (SDL_KeyboardEvent & event){
     if(event.type==SDL_KEYDOWN || event.type == SDL_TEXTINPUT) {
-		mouseControl = 0;
         if(event.keysym.sym==SDLK_LEFT){
+			mouseControl = 0;
             keyControl = 'l';
         }
         if(event.keysym.sym==SDLK_RIGHT){
+			mouseControl = 0;
             keyControl = 'r';
         }
         if(event.keysym.sym==SDLK_SPACE){

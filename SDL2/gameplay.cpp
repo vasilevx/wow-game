@@ -4,7 +4,6 @@ gameplay::gameplay(SDL_Renderer*const &ren) : myPlayer(ren), score(0), shootedGl
 {
     int i;
 	this->ren = ren;
-
     dest.y = 5;
 
     for(i=0; i<=1; ++i)
