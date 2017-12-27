@@ -25,12 +25,17 @@ private:
 	int level; //уровень
 	int curHits; //попадания на уровне
 	int shootedGlaives; //попадания по демонам
+	int mouseX;//координаты курсора
+
 
 public:
+	int mouseControl;
 	explicit gameplay(SDL_Renderer*const &ren);
     void show();
     bool Update();
     int KeyEvent(SDL_KeyboardEvent & event);
+	int MouseMotionEvent(SDL_MouseMotionEvent & motion);
+	int MouseButtonEvent(SDL_MouseButtonEvent & button);
     int shoot(SDL_KeyboardEvent & event);
     void Reset();
     int GetScore()

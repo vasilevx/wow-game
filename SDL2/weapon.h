@@ -2,7 +2,6 @@
 #define _WEAPON_H
 
 #include "controlUnits.h"
-//торпеда
 class weapon : public controlUnits{
 private:
     int shooted = 0;

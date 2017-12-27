@@ -28,6 +28,10 @@ void oneBigGame::start(SDL_Renderer*const &ren){
                 {
                     record.MouseMotionEvent(event.motion);
                 }
+
+				if (status == GameStatus && !gameplay.mouseControl) {
+					gameplay.MouseMotionEvent(event.motion);
+				}
             }
 
             if(event.type == SDL_MOUSEBUTTONDOWN)
@@ -49,7 +53,10 @@ void oneBigGame::start(SDL_Renderer*const &ren){
                     }
                 } else
 
-
+				if (status == GameStatus) {
+					gameplay.MouseButtonEvent(event.button);
+				} else
+					
 
                 if(status == PauseStatus)
                 {
@@ -117,7 +124,7 @@ void oneBigGame::start(SDL_Renderer*const &ren){
                     if(event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_ESCAPE)
                         status = Status(PauseStatus);
                     else{
-                        gameplay.KeyEvent(event.key);
+			            gameplay.KeyEvent(event.key);
                         gameplay.shoot(event.key);
                     }
                 } else
@@ -151,6 +158,8 @@ void oneBigGame::start(SDL_Renderer*const &ren){
                     if(rule.KeyEvent(event.key) == 0) status = Status(MenuStatus);
                 }
             }
+
+
         }
 
         background.show();
@@ -206,6 +215,10 @@ void oneBigGame::start(SDL_Renderer*const &ren){
             menubg.show();
             rule.show();
         }
+
+		if (status == GameStatus && gameplay.mouseControl) {
+			gameplay.MouseMotionEvent(event.motion);
+		}
 		SDL_RenderPresent(ren);
     }
 }

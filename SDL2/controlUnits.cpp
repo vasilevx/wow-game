@@ -15,16 +15,18 @@ void controlUnits::show(){
 
 
 void controlUnits::move(char flag){
-    if(flag=='r')
-        dest.x += 5;
-    if(flag=='l')
-        dest.x -= 5;
-    if(flag=='f')
-        dest.y -= 20;
+	if (flag == 'r')
+		dest.x += 5;
+	if (flag == 'l')
+		dest.x -= 5;
+	if (flag == 'f')
+		dest.y -= 20;
+	
 }
 
 int controlUnits::KeyEvent (SDL_KeyboardEvent & event){
     if(event.type==SDL_KEYDOWN || event.type == SDL_TEXTINPUT) {
+		mouseControl = 0;
         if(event.keysym.sym==SDLK_LEFT){
             keyControl = 'l';
         }
@@ -42,4 +44,24 @@ int controlUnits::KeyEvent (SDL_KeyboardEvent & event){
         }
     }
     return 0;
+}
+
+int controlUnits::MouseMotionEvent(SDL_MouseMotionEvent & motion, int x) {
+	mouseControl = 1;
+	keyControl = 0;
+	if (x > (dest.x + dest.w / 2))
+			move('r');
+	if (x < (dest.x + dest.w / 2))
+			move('l');
+
+	return 0;
+}
+int controlUnits::MouseButtonEvent(SDL_MouseButtonEvent & button) {
+
+
+
+
+	return 0;
+
+
 }

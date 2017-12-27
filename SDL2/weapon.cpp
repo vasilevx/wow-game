@@ -19,10 +19,7 @@ void weapon::Reset(SDL_Renderer *const &ren, SDL_Rect cords) {
     shooted = 0;
 	dest.y = cords.y;
 	dest.x = cords.x;
-
-}
-
-
+	}
 
 void weapon::move(char flag) {
     if(shooted)

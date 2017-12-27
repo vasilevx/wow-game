@@ -14,6 +14,9 @@ public:
 	//virtual void ResetPos() = 0; //сброс параметров
 	void move(char flag); //перемещение
 	int KeyEvent (SDL_KeyboardEvent & event); //нажатие клавиши
+	int MouseMotionEvent(SDL_MouseMotionEvent & motion, int x);
+	int MouseButtonEvent(SDL_MouseButtonEvent & button);
+	int mouseControl;
 
 };
 

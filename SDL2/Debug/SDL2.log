@@ -1,3 +1,2 @@
-﻿  records.cpp
-d:\progs\vsprojects\sdl2\sdl2\records.cpp(58): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+﻿  gameplay.cpp
   SDL2.vcxproj -> D:\Progs\VSProjects\SDL2\Debug\SDL2.exe

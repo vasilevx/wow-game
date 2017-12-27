@@ -107,7 +107,8 @@ bool gameplay::Update() //игра
 {
     for(int i=0; i<=1; ++i)
     {
-        if(myWeapon.GetX()!= myPlayer.GetX() && myWeapon.isShooted()==0){
+
+        if(myWeapon.GetX()!= myPlayer.GetX() && !myWeapon.isShooted()){
             myWeapon.Reset(ren, myPlayer.getCoords());
 
         }
@@ -116,6 +117,11 @@ bool gameplay::Update() //игра
             shootedGlaives++;
             totalGlaives--;
         }
+
+
+		if ((myWeapon.GetY() != myPlayer.GetY()) && !(myWeapon.isShooted())) {
+			myWeapon.Reset(ren, myPlayer.getCoords());
+		}
 
         enemyDemons[i]->move('m');
         if(enemyDemons[i]->GetX() >= W_WIDTH || enemyDemons[i]->GetX() <= 0){
@@ -141,7 +147,14 @@ bool gameplay::Update() //игра
             totalGlaives = 10;
             curHits = 0;
         }
+
+
+
+		
     }
+
+
+
 	SDL_Delay(1000/60);
 
 
@@ -150,9 +163,44 @@ bool gameplay::Update() //игра
 }
 
 int gameplay::KeyEvent(SDL_KeyboardEvent & event){
-    if(event.keysym.sym!=SDLK_SPACE)
-        return myPlayer.KeyEvent(event);
+	mouseControl = 0;
+	if (event.keysym.sym != SDLK_SPACE) {
+		return myPlayer.KeyEvent(event);
+	}
+	return 0;
 }
+
+int gameplay::MouseMotionEvent(SDL_MouseMotionEvent & motion) {
+	mouseX = motion.x;
+	mouseControl = 1;
+	
+
+		if (mouseX > (myPlayer.GetX() + myPlayer.GetW() / 2))
+			myPlayer.move('r');
+		if (mouseX < (myPlayer.GetX() + myPlayer.GetW() / 2))
+			myPlayer.move('l');
+		if (!myWeapon.isShooted()) {
+			myWeapon.Reset(ren, myPlayer.getCoords());
+		}
+	
+
+	return 0;
+}
+int gameplay::MouseButtonEvent(SDL_MouseButtonEvent & button) {
+	if (myWeapon.isShooted()) return 0;
+	if (button.type == SDL_MOUSEBUTTONDOWN && button.button == SDL_BUTTON_LEFT)
+	{
+		myWeapon.getShoot(1);
+		button.type = NULL;
+		return myWeapon.MouseButtonEvent(button);
+	}
+	return 0;
+}
+
+
+
+
+
 int gameplay::shoot(SDL_KeyboardEvent & event){
     if(myWeapon.isShooted()) return 0;
     if(event.keysym.sym==SDLK_SPACE && event.type==SDL_KEYDOWN){

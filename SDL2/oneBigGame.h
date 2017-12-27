@@ -42,6 +42,7 @@ private:
     rules rule;
     bool isDone;
 
+
 public:
     explicit oneBigGame(SDL_Renderer *const &ren, SDL_Window *const &window);
     void start(SDL_Renderer *const &ren);
