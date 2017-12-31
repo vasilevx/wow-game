@@ -25,11 +25,7 @@ pause::pause(SDL_Renderer*const &ren, SDL_Window*const &window) : UI(ren, window
 
     item();
 
-	text = TTF_RenderUTF8_Solid(smallFont, "Передвигайтесь с помощью стрелок, стреляйте пробелом", textColor);
-    r.x = (dest.w - text->w) / 2;
-	r.y = dest.h - text->h;
-    SDL_BlitSurface(text, NULL, textSurface, &r);
-    SDL_FreeSurface(text);
+
 }
 
 void pause::show() {

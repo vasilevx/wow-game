@@ -5,8 +5,8 @@
 //интерфейс
 class UI: public justSDL, public events{
 protected:
-    SDL_Surface* textSurface;//поверхность для текста
-	SDL_Surface* text;//поверхность для "слов"
+    SDL_Surface* textSurface;
+	SDL_Surface* text;
 	TTF_Font* bigFont;
     TTF_Font* textFont;
     TTF_Font* smallFont;

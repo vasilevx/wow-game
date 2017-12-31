@@ -15,9 +15,6 @@ player::player(SDL_Renderer*const &ren) {
 	dest.y = W_HEIGHT - dest.h;
 }
 
-//void player::show() {
-//	SDL_RenderCopy(ren, texture, NULL, &dest);
-//}
 
 void player::Reset(){
 	dest.x = (W_WIDTH - dest.w) / 2;

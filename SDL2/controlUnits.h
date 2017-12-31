@@ -11,7 +11,6 @@ protected:
 public:
     controlUnits();
     void show(); //отображение
-	//virtual void ResetPos() = 0; //сброс параметров
 	void move(char flag); //перемещение
 	int KeyEvent (SDL_KeyboardEvent & event); //нажатие клавиши
 	int MouseMotionEvent(SDL_MouseMotionEvent & motion, int x);

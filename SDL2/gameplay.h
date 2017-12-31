@@ -42,7 +42,7 @@ public:
     {
         return score;
     }
-	//~gameplay();
+
 };
 
 #endif // _GAMEPLAY_H

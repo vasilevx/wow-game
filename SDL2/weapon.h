@@ -12,7 +12,6 @@ public:
     void getShoot(int a);
     void Reset(SDL_Renderer *const &ren, SDL_Rect cords);
     void move(char flag);
-	//void show();
 };
 
 #endif // _WEAPON_H

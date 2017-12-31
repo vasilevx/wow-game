@@ -55,12 +55,7 @@ rules::rules(SDL_Renderer*const &ren, SDL_Window*const &window) : UI(ren, window
     SDL_BlitSurface(text, NULL, textSurface, &r);
     SDL_FreeSurface(text);
 	
-	//texture = SDL_CreateTextureFromSurface(ren, textSurface);
-	//SDL_FreeSurface(textSurface);
-	
-	//if (texture) SDL_DestroyTexture(texture);
-	//texture = SDL_CreateTextureFromSurface(ren, textSurface);
-	//SDL_RenderCopy(ren, texture, nullptr, &dest);
+
 
 }
 
@@ -76,9 +71,3 @@ int rules::KeyEvent (SDL_KeyboardEvent & event){
 int rules::MouseButtonEvent( SDL_MouseButtonEvent & button){
     return -1;
 }
-
-//void rules::show() {
-//	if (texture) SDL_DestroyTexture(texture);//?
-//	texture = SDL_CreateTextureFromSurface(ren, textSurface);//?
-//	SDL_RenderCopy(ren, texture, nullptr, &dest);//?
-//}

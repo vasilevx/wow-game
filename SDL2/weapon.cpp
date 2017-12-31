@@ -40,7 +40,5 @@ void weapon::getShoot(int a){
     setShoot(a);
 }
 
-//void weapon::show() {
-//	SDL_RenderCopy(ren, texture, NULL, &dest);
-//}
+
 

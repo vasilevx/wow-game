@@ -30,7 +30,6 @@ void enemy::SetStatus(SDL_Renderer*const &ren, demonType type, int level){
 		dest.h = demon3->h;
 		texture = SDL_CreateTextureFromSurface(ren, demon3);
 		SDL_FreeSurface(demon3);
-		//playSound("d3_spawn.wav", SDL_MIX_MAXVOLUME / 2);
 
 		return;
     }
@@ -41,7 +40,6 @@ void enemy::SetStatus(SDL_Renderer*const &ren, demonType type, int level){
 		dest.h = demon1->h;
 		texture = SDL_CreateTextureFromSurface(ren, demon1);
 		SDL_FreeSurface(demon1); 
-		//playSound("d1_spawn.wav", SDL_MIX_MAXVOLUME / 2);
 
 
 		return;
@@ -53,7 +51,6 @@ void enemy::SetStatus(SDL_Renderer*const &ren, demonType type, int level){
 		dest.h = demon2->h;
 		texture = SDL_CreateTextureFromSurface(ren, demon2);
 		SDL_FreeSurface(demon2); 
-		//playSound("d2_spawn.wav", SDL_MIX_MAXVOLUME / 2);
 
 		return;
 

@@ -1,2 +1,23 @@
-﻿  controlUnits.cpp
+﻿  weapon.cpp
+  rules.cpp
+  player.cpp
+  enemy.cpp
+  Generating Code...
+  Compiling...
+  oneBigGame.cpp
+  main.cpp
+  gameplay.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  username.cpp
+  records.cpp
+  pause.cpp
+  menuBG.cpp
+  mainMenu.cpp
+  intro.cpp
+  gameOver.cpp
+  controlUnits.cpp
+  background.cpp
+  UI.cpp
+     Creating library D:\Progs\VSProjects\SDL2\Debug\SDL2.lib and object D:\Progs\VSProjects\SDL2\Debug\SDL2.exp
   SDL2.vcxproj -> D:\Progs\VSProjects\SDL2\Debug\SDL2.exe
